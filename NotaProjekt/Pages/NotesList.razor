@@ -1,0 +1,37 @@
+﻿@page "/notes"
+@inject BlazorNotatnik.Data.NoteService NoteService
+@inject NavigationManager NavigationManager
+@code {
+    private List<Note> notes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        notes = await NoteService.GetNotes();
+    }
+
+    private async Task DeleteNote(Note note)
+    {
+        await NoteService.DeleteNote(note.Id);
+        notes.Remove(note);
+    }
+    private async Task EditNote(int noteId)
+    {
+        // Przekieruj użytkownika do formularza edycji notatki, używając nawigacji
+        NavigationManager.NavigateTo($"note/{noteId}");
+    }
+}
+
+<div>
+    <h3>Lista notatek</h3>
+    <ul>
+        @foreach (var note in notes)
+        {
+            <div class="note-item">
+                <h4>@note.Title</h4>
+                <p>@note.Content</p>
+                <button @onclick="() => EditNote(note.Id)">Edytuj</button>
+                <button @onclick="() => DeleteNote(note)">Usuń</button>
+            </div>
+        }
+    </ul>
+</div>

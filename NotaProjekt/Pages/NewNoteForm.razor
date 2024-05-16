@@ -1,0 +1,34 @@
+﻿@inject BlazorNotatnik.Data.NoteService NoteService
+
+<h3>Dodaj nową notatkę</h3>
+
+<form @onsubmit="SaveNote">
+    <div>
+        <label for="title">Tytuł:</label>
+        <input type="text" id="title" @bind="newNoteTitle" />
+    </div>
+    <div>
+        <label for="content">Treść:</label>
+        <textarea id="content" @bind="newNoteContent"></textarea>
+    </div>
+    <button type="submit">Dodaj</button>
+</form>
+
+@if (noteAddedSuccessfully)
+{
+    <p style="color: green;">Notatka została pomyślnie dodana.</p>
+}
+
+@code {
+    private string newNoteTitle;
+    private string newNoteContent;
+    private bool noteAddedSuccessfully = false;
+
+    private async Task SaveNote()
+    {
+        await NoteService.AddNote(newNoteTitle, newNoteContent);
+        noteAddedSuccessfully = true;
+        newNoteTitle = "";
+        newNoteContent = "";
+    }
+}

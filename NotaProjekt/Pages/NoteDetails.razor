@@ -1,0 +1,24 @@
+﻿@page "/note/{Id:int}"
+@inject BlazorNotatnik.Data.NoteService NoteService
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private Note note;
+
+    protected override async Task OnInitializedAsync()
+    {
+        note = await NoteService.GetNoteById(Id);
+    }
+
+    private async Task SaveNote()
+    {
+        await NoteService.UpdateNote(note);
+    }
+
+}
+
+<div>
+    <input @bind="note.Title" placeholder="Tytuł" />
+    <textarea @bind="note.Content" placeholder="Treść notatki"></textarea>
+    <button class="button-19" onclick="SaveNote">Zapisz</button>
+</div>

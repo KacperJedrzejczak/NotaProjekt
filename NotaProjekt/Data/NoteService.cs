@@ -18,16 +18,17 @@ namespace BlazorNotatnik.Data
 
         public Task<Note> GetNoteById(int id)
         {
-            return Task.FromResult(notes.FirstOrDefault(n => n.Id == id));
+            var note = notes.FirstOrDefault(n => n.Id == id);
+            return Task.FromResult(note);
         }
 
-        public Task UpdateNote(Note note)
+        public Task UpdateNote(Note updatedNote)
         {
-            var existingNote = notes.FirstOrDefault(n => n.Id == note.Id);
+            var existingNote = notes.FirstOrDefault(n => n.Id == updatedNote.Id);
             if (existingNote != null)
             {
-                existingNote.Title = note.Title;
-                existingNote.Content = note.Content;
+                existingNote.Title = updatedNote.Title;
+                existingNote.Content = updatedNote.Content;
             }
             return Task.CompletedTask;
         }

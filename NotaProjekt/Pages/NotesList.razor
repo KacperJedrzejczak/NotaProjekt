@@ -1,6 +1,28 @@
 ﻿@page "/notes"
 @inject BlazorNotatnik.Data.NoteService NoteService
 @inject NavigationManager NavigationManager
+
+<h3>Lista notatek</h3>
+
+@if (notes != null)
+{
+    <ul>
+        @foreach (var note in notes)
+        {
+            <div class="note-item">
+                <h4>@note.Title</h4>
+                <p>@note.Content</p>
+                <button class="button-19" @onclick="() => EditNote(note.Id)">Edytuj</button>
+                <button class="button-19" @onclick="() => DeleteNote(note.Id)">Usuń</button>
+            </div>
+        }
+    </ul>
+}
+else
+{
+    <p>Ładowanie notatek...</p>
+}
+
 @code {
     private List<Note> notes;
 
@@ -9,29 +31,14 @@
         notes = await NoteService.GetNotes();
     }
 
-    private async Task DeleteNote(Note note)
+    private void EditNote(int noteId)
     {
-        await NoteService.DeleteNote(note.Id);
-        notes.Remove(note);
+        NavigationManager.NavigateTo($"/editnote/{noteId}");
     }
-    private async Task EditNote(int noteId)
+
+    private async Task DeleteNote(int noteId)
     {
-        // Przekieruj użytkownika do formularza edycji notatki, używając nawigacji
-        NavigationManager.NavigateTo($"note/{noteId}");
+        await NoteService.DeleteNote(noteId);
+        notes = await NoteService.GetNotes();
     }
 }
-
-<div>
-    <h3>Lista notatek</h3>
-    <ul>
-        @foreach (var note in notes)
-        {
-            <div class="note-item">
-                <h4>@note.Title</h4>
-                <p>@note.Content</p>
-                <button @onclick="() => EditNote(note.Id)">Edytuj</button>
-                <button @onclick="() => DeleteNote(note)">Usuń</button>
-            </div>
-        }
-    </ul>
-</div>

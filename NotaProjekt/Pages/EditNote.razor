@@ -1,0 +1,55 @@
+﻿@page "/editnote/{noteId:int}"
+@inject BlazorNotatnik.Data.NoteService NoteService
+@inject NavigationManager NavigationManager
+
+<h3>Edytuj notatkę</h3>
+
+@if (note != null)
+{
+    <form @onsubmit="SaveNote">
+        <div>
+            <label for="title">Tytuł:</label>
+            <input type="text" id="title" @bind="note.Title" />
+        </div>
+        <div>
+            <label for="content">Treść:</label>
+            <textarea id="content" @bind="note.Content"></textarea>
+        </div>
+        <button type="submit">Zapisz</button>
+    </form>
+
+    @if (noteEditedSuccessfully)
+    {
+        <p style="color: green;">Notatka została pomyślnie zaktualizowana.</p>
+    }
+
+    <button @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
+}
+else
+{
+    <p>Ładowanie notatki...</p>
+}
+
+@code {
+    [Parameter]
+    public int NoteId { get; set; }
+
+    private Note note;
+    private bool noteEditedSuccessfully = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        note = await NoteService.GetNoteById(NoteId);
+    }
+
+    private async Task SaveNote()
+    {
+        await NoteService.UpdateNote(note);
+        noteEditedSuccessfully = true;
+    }
+
+    private void NavigateToNotesList()
+    {
+        NavigationManager.NavigateTo("/notes");
+    }
+}

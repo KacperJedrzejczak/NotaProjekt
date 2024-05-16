@@ -18,7 +18,14 @@
 }
 
 <div>
-    <input @bind="note.Title" placeholder="Tytuł" />
-    <textarea @bind="note.Content" placeholder="Treść notatki"></textarea>
+    <div>
+        <input @bind="note.Title" placeholder="Tytuł" />
+
+    </div>
+    <div>
+        <textarea @bind="note.Content" placeholder="Treść notatki"></textarea>
+    </div>
+
+
     <button class="button-19" onclick="SaveNote">Zapisz</button>
 </div>

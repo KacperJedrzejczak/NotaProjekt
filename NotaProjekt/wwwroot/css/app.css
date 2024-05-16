@@ -3,7 +3,9 @@
     float: left;
     background-color: red
 }
-
+.form{
+    background-color: yellow
+}
 .main {
     margin-left: 210px;
     background-color: yellow

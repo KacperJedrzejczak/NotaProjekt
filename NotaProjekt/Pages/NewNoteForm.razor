@@ -1,19 +1,25 @@
 ﻿@inject BlazorNotatnik.Data.NoteService NoteService
+@inject NavigationManager NavigationManager
 
 <h3>Dodaj nową notatkę</h3>
 
 <form @onsubmit="SaveNote">
-    <div>
-        <label for="title">Tytuł:</label>
+    <div class="titlee">
+        Tytuł:
+        <br />
+        <label for="title"></label>
         <input type="text" id="title" @bind="newNoteTitle" />
+       
     </div>
-    <div>
-        <label for="content">Treść:</label>
+    <div class="contentt">
+        Treść:
+        <br />
+        <label for="content"></label>
         <textarea id="content" @bind="newNoteContent"></textarea>
     </div>
     <button type="submit">Dodaj</button>
 </form>
-
+<button @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
 @if (noteAddedSuccessfully)
 {
     <p style="color: green;">Notatka została pomyślnie dodana.</p>
@@ -30,5 +36,9 @@
         noteAddedSuccessfully = true;
         newNoteTitle = "";
         newNoteContent = "";
+    }
+    private void NavigateToNotesList()
+    {
+        NavigationManager.NavigateTo("/notes");
     }
 }

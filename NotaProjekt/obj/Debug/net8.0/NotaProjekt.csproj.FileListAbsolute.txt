@@ -1029,3 +1029,4 @@ F:\Programiki\Jeden\NotaProjekt1\NotaProjekt\obj\Debug\net8.0\NotaProjekt.dll
 F:\Programiki\Jeden\NotaProjekt1\NotaProjekt\obj\Debug\net8.0\refint\NotaProjekt.dll
 F:\Programiki\Jeden\NotaProjekt1\NotaProjekt\obj\Debug\net8.0\NotaProjekt.pdb
 F:\Programiki\Jeden\NotaProjekt1\NotaProjekt\obj\Debug\net8.0\ref\NotaProjekt.dll
+F:\Programiki\Jeden\NotaProjekt1\NotaProjekt\obj\Debug\net8.0\NotaProjekt.sourcelink.json

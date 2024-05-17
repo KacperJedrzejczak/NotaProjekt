@@ -3,22 +3,20 @@
     float: left;
     background-color: red
 }
-.form{
-    background-color: yellow
-}
+
 .main {
     margin-left: 210px;
-    background-color: yellow
+    background-color: yellow;
 }
 
 .content {
     padding: 20px;
-    background-color: green
+    background-color: blue
 }
 
 .note-item {
     background-color: yellow;
-    width: 25%;
+    width: 50%;
 }
 .button-19 {
   appearance: button;
@@ -70,6 +68,22 @@
   -webkit-filter: brightness(1.1);
 }
 
+a:link, a:visited {
+    background-color: azure;
+    color: red;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: aqua;
+}
+
+body {
+    background-color:black;
+}
 
 
 

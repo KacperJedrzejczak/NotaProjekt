@@ -15,7 +15,8 @@
             <label for="content">Treść:</label>
             <textarea id="content" @bind="note.Content"></textarea>
         </div>
-        <button type="submit">Zapisz</button>
+        <button class="button-19" type="submit">Zapisz</button>
+        <button class="button-19" @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
     </form>
 
     @if (noteEditedSuccessfully)
@@ -23,7 +24,6 @@
         <p style="color: green;">Notatka została pomyślnie zaktualizowana.</p>
     }
 
-    <button @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
 }
 else
 {

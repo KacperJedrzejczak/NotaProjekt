@@ -17,9 +17,10 @@
         <label for="content"></label>
         <textarea id="content" @bind="newNoteContent"></textarea>
     </div>
-    <button type="submit">Dodaj</button>
+    <button class="button-19" type="submit">Dodaj</button>
+    <button class="button-19" @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
 </form>
-<button @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
+
 @if (noteAddedSuccessfully)
 {
     <p style="color: green;">Notatka została pomyślnie dodana.</p>

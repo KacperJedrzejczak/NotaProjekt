@@ -5,14 +5,23 @@
 
 <form @onsubmit="SaveNote">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="" />
+        <input type="text" class="form-control" id="floatingInput" placeholder="" @bind="newNoteTitle" />
         <label for="floatingInput">Tytuł</label>
-       
+        @if (string.IsNullOrWhiteSpace(newNoteTitle) && formSubmitted)
+        {
+            <div class="text-danger">Tytuł jest wymagany</div>
+        }
+
     </div>
     <div class="form-floating">
-        <textarea class="form-control" id="floatingTextarea2" style="height: 100px" @bind="newNoteContent"></textarea>
+        <textarea class="form-control" id="floatingTextarea2" placeholder="" style="height: 100px" @bind="newNoteContent"></textarea>
         <label for="floatingTextarea2">Treść notatki</label>
+        @if (string.IsNullOrWhiteSpace(newNoteTitle) && formSubmitted)
+        {
+            <div class="text-danger">Treść jest wymagany</div>
+        }
     </div>
+    <br />
     <button type="submit" class="btn btn-info">Dodaj</button>
     <button type="button" class="btn btn-info" @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
 </form>
@@ -26,13 +35,23 @@
     private string newNoteTitle;
     private string newNoteContent;
     private bool noteAddedSuccessfully = false;
+    private bool formSubmitted = false;
 
     private async Task SaveNote()
     {
+        formSubmitted = true;
+        if (string.IsNullOrWhiteSpace(newNoteTitle) || string.IsNullOrWhiteSpace(newNoteContent))
+        {
+            noteAddedSuccessfully = false;
+            return;
+        }
         await NoteService.AddNote(newNoteTitle, newNoteContent);
         noteAddedSuccessfully = true;
+        formSubmitted = false;
         newNoteTitle = "";
         newNoteContent = "";
+
+
     }
     private void NavigateToNotesList()
     {

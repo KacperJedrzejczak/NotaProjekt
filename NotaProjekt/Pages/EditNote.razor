@@ -8,13 +8,14 @@
 {
     <form @onsubmit="SaveNote">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="" @bind="note.Title" />
+            <input type="text" class="form-control" id="floatingInput" @bind="note.Title" />
             <label for="floatingInput">Tytuł</label>
         </div>
         <div class="form-floating">
             <textarea class="form-control" id="floatingTextarea2" style="height: 100px" @bind="note.Content"></textarea>
             <label for="floatingTextarea2">Treść notatki</label>
         </div>
+        <br />
         <button type="submit" class="btn btn-primary">Zapisz</button>
         <button type="button" class="btn btn-primary" @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
     </form>

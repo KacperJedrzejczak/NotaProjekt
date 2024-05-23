@@ -4,21 +4,17 @@
 <h3>Dodaj nową notatkę</h3>
 
 <form @onsubmit="SaveNote">
-    <div class="titlee">
-        Tytuł:
-        <br />
-        <label for="title"></label>
-        <input type="text" id="title" @bind="newNoteTitle" />
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder="" />
+        <label for="floatingInput">Tytuł</label>
        
     </div>
-    <div class="contentt">
-        Treść:
-        <br />
-        <label for="content"></label>
-        <textarea id="content" @bind="newNoteContent"></textarea>
+    <div class="form-floating">
+        <textarea class="form-control" id="floatingTextarea2" style="height: 100px" @bind="newNoteContent"></textarea>
+        <label for="floatingTextarea2">Treść notatki</label>
     </div>
-    <button class="button-19" type="submit">Dodaj</button>
-    <button class="button-19" @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
+    <button type="submit" class="btn btn-info">Dodaj</button>
+    <button type="button" class="btn btn-info" @onclick="NavigateToNotesList">Powrót do wszystkich notatek</button>
 </form>
 
 @if (noteAddedSuccessfully)

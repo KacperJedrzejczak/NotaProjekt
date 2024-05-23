@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NotaProjekt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf5147016bdc30a205aa8224b2efabb7d071e625")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+728c48d20a818c04e1f444139a5fbfcc1606dae4")]
 [assembly: System.Reflection.AssemblyProductAttribute("NotaProjekt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NotaProjekt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

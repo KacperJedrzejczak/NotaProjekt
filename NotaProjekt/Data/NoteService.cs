@@ -9,6 +9,8 @@ namespace BlazorNotatnik.Data
         private List<Note> notes = new List<Note>
         {
             new Note { Id = 1, Title = "Tytuł = Test", Content = "Zawatość = Test" },
+            new Note { Id = 2, Title = "Tytuł = Test", Content = "Zawatość = Test" },
+            new Note { Id = 3, Title = "Tytuł = Test", Content = "Zawatość = Test" },
         };
 
         public Task<List<Note>> GetNotes()
@@ -37,7 +39,7 @@ namespace BlazorNotatnik.Data
         {
             var newNote = new Note
             {
-                Id = notes.Count + 1, // ID nowej notatki
+                Id = notes.Count + 1, 
                 Title = title,
                 Content = content
             };

@@ -7,15 +7,17 @@
 @if (notes != null)
 {
     <ul>
+        <div class="notes-container">
         @foreach (var note in notes)
         {
-            <div class="note-item">
+            <div class="note-card">
                 <h4>@note.Title</h4>
                 <p>@note.Content</p>
-                <button class="button-19" @onclick="() => EditNote(note.Id)">Edytuj</button>
-                <button class="button-19" @onclick="() => DeleteNote(note.Id)">Usuń</button>
+                <button type="button" class="btn btn-success" @onclick="() => EditNote(note.Id)">Edytuj</button>
+                <button type="button" class="btn btn-danger" @onclick="() => DeleteNote(note.Id)">Usuń</button>
             </div>
         }
+        </div>
     </ul>
 }
 else

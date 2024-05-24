@@ -13,51 +13,51 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = NotaProjekt
 build_property.RootNamespace = NotaProjekt
-build_property.ProjectDir = /home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/
+build_property.ProjectDir = F:\Programiki\Jeden\NotaProjekt1\NotaProjekt\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/kj-linux/NotaProj/NotaProjekt/NotaProjekt
+build_property.MSBuildProjectDirectory = F:\Programiki\Jeden\NotaProjekt1\NotaProjekt
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/App.razor]
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/Pages/EditNote.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdE5vdGUucmF6b3I=
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Pages/EditNote.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdE5vdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/Pages/NewNote.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTmV3Tm90ZS5yYXpvcg==
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Pages/NewNote.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3Tm90ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/Pages/NewNoteForm.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTmV3Tm90ZUZvcm0ucmF6b3I=
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Pages/NewNoteForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3Tm90ZUZvcm0ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/Pages/NoteDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90ZURldGFpbHMucmF6b3I=
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Pages/NoteDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90ZURldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/Pages/NotesList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90ZXNMaXN0LnJhem9y
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Pages/NotesList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90ZXNMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/_Imports.razor]
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L01haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-0nlx7i6xl3
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-pfv4kppmy0
 
-[/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L05hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-q194veze3t
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-54v624qz9r

@@ -1,6 +1,7 @@
 ﻿@page "/editnote/{noteId:int}"
 @inject BlazorNotatnik.Data.NoteService NoteService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 <h3>Edytuj notatkę</h3>
 
@@ -10,10 +11,18 @@
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingInput" style="width: 25%" @bind="note.Title" />
             <label for="floatingInput">Tytuł</label>
+            @if (showTitleError)
+            {
+                <span style="color: red">Tytuł jest wymagany!</span>
+            }
         </div>
         <div class="form-floating">
             <textarea class="form-control" id="floatingTextarea2" style="height: 100px; width: 25%" @bind="note.Content"></textarea>
             <label for="floatingTextarea2">Treść notatki</label>
+            @if (showContentError)
+            {
+                <span style="color: red">Treść jest wymagana!</span>
+            }
         </div>
         <br />
         <button type="submit" class="btn btn-primary">Zapisz</button>
@@ -36,21 +45,50 @@ else
     public int NoteId { get; set; }
 
     private Note note;
+    private Note originalNote;
     private bool noteEditedSuccessfully = false;
+    private bool showTitleError = false;
+    private bool showContentError = false;
 
     protected override async Task OnInitializedAsync()
     {
         note = await NoteService.GetNoteById(NoteId);
+        originalNote = new Note { Title = note.Title, Content = note.Content }; 
     }
 
     private async Task SaveNote()
     {
+        showTitleError = string.IsNullOrWhiteSpace(note.Title);
+        showContentError = string.IsNullOrWhiteSpace(note.Content);
+
+        if (showTitleError || showContentError)
+        {
+            return; 
+        }
+
         await NoteService.UpdateNote(note);
         noteEditedSuccessfully = true;
+        originalNote = new Note { Title = note.Title, Content = note.Content }; 
     }
 
-    private void NavigateToNotesList()
+    private async Task NavigateToNotesList()
     {
+        if (originalNote.Title != note.Title || originalNote.Content != note.Content)
+        {
+
+            bool confirmLeave = await JSRuntime.InvokeAsync<bool>("confirm", "Notatka została zmieniona. Czy na pewno chcesz opuścić stronę?");
+            if (!confirmLeave)
+            {
+                return;
+            }
+        }
+
+        if (string.IsNullOrWhiteSpace(note.Title) && string.IsNullOrWhiteSpace(note.Content))
+        {
+            note.Title = originalNote.Title;
+            note.Content = originalNote.Content;
+        }
+
         NavigationManager.NavigateTo("/notes");
     }
 }

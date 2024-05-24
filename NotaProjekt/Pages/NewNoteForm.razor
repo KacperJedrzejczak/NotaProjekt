@@ -16,7 +16,7 @@
     <div class="form-floating">
         <textarea class="form-control" id="floatingTextarea2" placeholder="" style="height: 100px; width: 25%" @bind="newNoteContent"></textarea>
         <label for="floatingTextarea2">Treść notatki</label>
-        @if (string.IsNullOrWhiteSpace(newNoteTitle) && formSubmitted)
+        @if (string.IsNullOrWhiteSpace(newNoteContent) && formSubmitted)
         {
             <div class="text-danger">Treść jest wymagany</div>
         }

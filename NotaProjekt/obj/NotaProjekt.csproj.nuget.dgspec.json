@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Programiki\\Jeden\\NotaProjekt1\\NotaProjekt\\NotaProjekt.csproj": {}
+    "/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/NotaProjekt.csproj": {}
   },
   "projects": {
-    "F:\\Programiki\\Jeden\\NotaProjekt1\\NotaProjekt\\NotaProjekt.csproj": {
+    "/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/NotaProjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Programiki\\Jeden\\NotaProjekt1\\NotaProjekt\\NotaProjekt.csproj",
+        "projectUniqueName": "/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/NotaProjekt.csproj",
         "projectName": "NotaProjekt",
-        "projectPath": "F:\\Programiki\\Jeden\\NotaProjekt1\\NotaProjekt\\NotaProjekt.csproj",
-        "packagesPath": "C:\\Users\\jotka\\.nuget\\packages\\",
-        "outputPath": "F:\\Programiki\\Jeden\\NotaProjekt1\\NotaProjekt\\obj\\",
+        "projectPath": "/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/NotaProjekt.csproj",
+        "packagesPath": "/home/kj-linux/.nuget/packages/",
+        "outputPath": "/home/kj-linux/NotaProj/NotaProjekt/NotaProjekt/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jotka\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/kj-linux/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -52,13 +55,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0, )",
+              "version": "[8.0.5, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0, )",
+              "version": "[8.0.5, )",
               "autoReferenced": true
             }
           },
@@ -76,7 +79,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.0, 8.0.0]"
+              "version": "[8.0.5, 8.0.5]"
             }
           ],
           "frameworkReferences": {
@@ -84,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

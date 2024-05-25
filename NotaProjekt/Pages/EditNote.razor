@@ -73,17 +73,19 @@ else
 
     private async Task NavigateToNotesList()
     {
+        bool confirmLeave = true;
+
         if (originalNote.Title != note.Title || originalNote.Content != note.Content)
         {
-
-            bool confirmLeave = await JSRuntime.InvokeAsync<bool>("confirm", "Notatka została zmieniona. Czy na pewno chcesz opuścić stronę?");
-            if (!confirmLeave)
-            {
-                return;
-            }
+            confirmLeave = await JSRuntime.InvokeAsync<bool>("confirm", "Notatka została zmieniona. Czy na pewno chcesz opuścić stronę?");
         }
 
-        if (string.IsNullOrWhiteSpace(note.Title) && string.IsNullOrWhiteSpace(note.Content))
+        if (!confirmLeave)
+        {
+            return;
+        }
+
+        if (!noteEditedSuccessfully)
         {
             note.Title = originalNote.Title;
             note.Content = originalNote.Content;
@@ -92,3 +94,4 @@ else
         NavigationManager.NavigateTo("/notes");
     }
 }
+

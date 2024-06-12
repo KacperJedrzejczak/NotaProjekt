@@ -1,16 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BlazorNotatnik.Data
+﻿namespace BlazorNotatnik.Data
 {
     public class NoteService
     {
         private List<Note> notes = new List<Note>
         {
-            new Note { Id = 1, Title = "Tytuł = Test", Content = "Zawatość = Test" },
-            new Note { Id = 2, Title = "Tytuł = Test", Content = "Zawatość = Test" },
-            new Note { Id = 3, Title = "Tytuł = Test", Content = "Zawatość = Test" },
+            new Note { Id = 1, Title = "Zakupy", Content = "Mleko, jajka mąka" },
+            new Note { Id = 2, Title = "Przedszkole", Content = "Zawieźć kota na 14:00, sala 102" },
+            new Note { Id = 3, Title = "Weterynarz", Content = "Zawieźć dziecko na 10:00, sala 120" },
         };
 
         public Task<List<Note>> GetNotes()
@@ -55,6 +51,11 @@ namespace BlazorNotatnik.Data
                 notes.Remove(noteToRemove);
             }
             return Task.CompletedTask;
+        }
+        public Task<List<Note>> SearchNotesByTitle(string title)
+        {
+            var result = notes.Where(n => n.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
+            return Task.FromResult(result);
         }
     }
 }

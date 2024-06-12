@@ -1,9 +1,19 @@
 ﻿@page "/notes"
 @inject BlazorNotatnik.Data.NoteService NoteService
 @inject NavigationManager NavigationManager
-
+<br />
+<br />
 <h3>Lista notatek</h3>
 
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Szukajka</span>
+  </div>
+    <input type="text" class="form-control" placeholder="Wyszukaj tytuł..." aria-label="Username" aria-describedby="basic-addon1" @bind="searchTerm" @oninput="SearchNotes">
+</div>
+
+<br />
+<br />
 @if (notes != null)
 {
     <ul>
@@ -27,6 +37,7 @@ else
 
 @code {
     private List<Note> notes;
+    private string searchTerm = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
@@ -42,5 +53,18 @@ else
     {
         await NoteService.DeleteNote(noteId);
         notes = await NoteService.GetNotes();
+    }
+
+    private async Task SearchNotes(ChangeEventArgs e)
+    {
+        searchTerm = e.Value.ToString();
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            notes = await NoteService.GetNotes();
+        }
+        else
+        {
+            notes = await NoteService.SearchNotesByTitle(searchTerm);
+        }
     }
 }

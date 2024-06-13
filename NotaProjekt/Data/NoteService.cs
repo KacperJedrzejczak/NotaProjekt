@@ -27,43 +27,45 @@
             var existingNote = notes.FirstOrDefault(n => n.Id == updatedNote.Id);
             if (existingNote != null)
             {
-                var change = new NoteChange
+                var noteChange = new NoteChange
                 {
-                    Id = noteChanges.Count + 1,
-                    NoteId = updatedNote.Id,
-                    ChangeType = "Updated",
-                    Title = updatedNote.Title,
-                    Content = updatedNote.Content,
-                    ChangeDate = DateTime.Now
+                    Id = noteChanges.Count + 1, 
+                    NoteId = existingNote.Id,
+                    Title = existingNote.Title,                   
+                    Content = existingNote.Content,                  
+                    Timestamp = DateTime.Now,
+                    ChangeType = "update"
                 };
-                noteChanges.Add(change);
 
                 existingNote.Title = updatedNote.Title;
                 existingNote.Content = updatedNote.Content;
+
+                noteChanges.Add(noteChange);
             }
             return Task.CompletedTask;
         }
 
         public Task AddNote(string title, string content)
         {
-            var newNote = new Note
-            {
-                Id = notes.Count + 1, 
-                Title = title,
-                Content = content
-            };
+            var newNote = new NoteBuilder()
+                .WithId(notes.Count + 1)
+                .WithTitle(title)
+                .WithContent(content)
+                .Build();
+
             notes.Add(newNote);
 
-            var change = new NoteChange
+            // Dodanie do archiwum
+            var noteChange = new NoteChange
             {
                 Id = noteChanges.Count + 1,
                 NoteId = newNote.Id,
-                ChangeType = "Added",
-                Title = title,
-                Content = content,
-                ChangeDate = DateTime.Now
+                Title = newNote.Title,
+                Content = newNote.Content,
+                Timestamp = DateTime.Now,
+                ChangeType = "create"
             };
-            noteChanges.Add(change);
+            noteChanges.Add(noteChange);
 
             return Task.CompletedTask;
         }
@@ -73,21 +75,24 @@
             var noteToRemove = notes.FirstOrDefault(n => n.Id == id);
             if (noteToRemove != null)
             {
-                var change = new NoteChange
+                // Dodanie do archiwum
+                var noteChange = new NoteChange
                 {
                     Id = noteChanges.Count + 1,
-                    NoteId = id,
-                    ChangeType = "Deleted",
-                    Title = noteToRemove.Title,
-                    Content = noteToRemove.Content,
-                    ChangeDate = DateTime.Now
+                    NoteId = noteToRemove.Id,
+                    Title = noteToRemove.Title,       
+                    Content = noteToRemove.Content,            
+                    Timestamp = DateTime.Now,
+                    ChangeType = "delete"
                 };
-                noteChanges.Add(change);
+                noteChanges.Add(noteChange);
 
                 notes.Remove(noteToRemove);
             }
             return Task.CompletedTask;
         }
+
+
         public Task<List<Note>> SearchNotesByTitle(string title)
         {
             var result = notes.Where(n => n.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();

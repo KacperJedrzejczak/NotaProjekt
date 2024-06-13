@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "NotaProjekt",
   "resources": {
-    "hash": "sha256-04aErUuNeo7prWZTPykSVusyMzobrMjV3tCyYWSexYI=",
+    "hash": "sha256-TcRvi3OpNfhdwGTG4YDJFdO+YayryOJVmFKevaM0Vlo=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.jlih9ui4re.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-cDuLeL3OCtVtiid/dyex1MVgbuzDSRwZxKzuP2Dp4mg=",
       "netstandard.wasm": "sha256-A0h86SDieTMoU/wU2JTszWCsUmMuguDcbap0b0BzsmI=",
       "System.Private.CoreLib.wasm": "sha256-/0DNIm/T0C07X7Tuz5uR8JvVCoAfEE2MnfPUSjyS9xc=",
-      "NotaProjekt.wasm": "sha256-dyYbmlfJoSgIr4C3nNucQvy9bddOAxQwcSWwU4DU1WE="
+      "NotaProjekt.wasm": "sha256-NLPg8kYqLec/x106x3/Binw9/OSgLcrEQ2iRCGK7a/A="
     },
     "pdb": {
-      "NotaProjekt.pdb": "sha256-EYxgtv8xXVpxOHOUvDaQ+5RKm8x03kYlE+NljDX5ALU="
+      "NotaProjekt.pdb": "sha256-Stl4boCj9IJVurSHaV6zOSVsysWB3WzZd37Ir7R/aQo="
     }
   },
   "cacheBootResources": true,

@@ -2,6 +2,8 @@
 @using BlazorNotatnik.Data
 @inject BlazorNotatnik.Data.NoteService NoteService
 
+<br />
+<br />
 
 <h3>Historia zmian</h3>
 
@@ -31,7 +33,7 @@ else
                     <td>@change.ChangeType</td>
                     <td>@change.Title</td>
                     <td>@change.Content</td>
-                    <td>@change.ChangeDate</td>
+                    <td>@change.Timestamp</td>
                 </tr>
             }
         </tbody>

@@ -1,0 +1,48 @@
+﻿@page "/note-history"
+@using BlazorNotatnik.Data
+@inject BlazorNotatnik.Data.NoteService NoteService
+
+
+<h3>Historia zmian</h3>
+
+@if (noteChanges == null)
+{
+    <p><em>Wczytywanie...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id Zmiany</th>
+                <th scope="col">Id Notatki</th>
+                <th scope="col">Zmiana</th>
+                <th scope="col">Tytuł</th>
+                <th scope="col">Treść</th>
+                <th scope="col">Data zmiany</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var change in noteChanges)
+            {
+                <tr>
+                    <td>@change.Id</td>
+                    <td>@change.NoteId</td>
+                    <td>@change.ChangeType</td>
+                    <td>@change.Title</td>
+                    <td>@change.Content</td>
+                    <td>@change.ChangeDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<NoteChange> noteChanges;
+
+    protected override async Task OnInitializedAsync()
+    {
+        noteChanges = await NoteService.GetNoteChanges();
+    }
+}

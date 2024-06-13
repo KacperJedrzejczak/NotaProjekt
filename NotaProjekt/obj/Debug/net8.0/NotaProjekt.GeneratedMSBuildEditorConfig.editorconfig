@@ -46,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90ZURldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Pages/NoteHistory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90ZUhpc3RvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Programiki/Jeden/NotaProjekt1/NotaProjekt/Pages/NotesList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90ZXNMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
